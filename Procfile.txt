@@ -1,0 +1,1 @@
+web: gunicorn datingvd.wsgi --log-file -
