@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Dating Vidhi Gupta - The Journey </title>
+	<link rel="stylesheet" type="text/css" href="static/css/index.css">
+	<link rel="icon" 
+      type="image/jpg" 
+      href="static/img/heart_fav.jpg">
+
+</head>
+<body>
+	<div id="img">
+		<center>
+			<span id="text"> Coming Soon... </span>
+			<img id="vd" src="static/img/vd.jpg">
+		</center>
+	<audio id="audio_track">
+  		<source src="static/audio/back.mp3" type="audio/mpeg">
+	</audio> 
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
+	<script src="static/js/jquery.snow.min.1.0.js"></script>
+	<script>
+		$(document).ready( function(){
+		        $.fn.snow({ minSize: 5, maxSize: 50, newOn: 300, flakeColor: '#F6FBC4' });
+		});
+
+		$('#vd').animate( {'opacity':0.5} , 30000 ,function() {
+			$('#text').animate({'opacity':0.5} , 2000);
+		});
+
+		myAud=document.getElementById("audio_track");
+			  myAud.autoplay=true;
+			  myAud.load();
+
+		if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPad/i))) {
+	 			$('body').css('background', '#000').css('overflow','hidden');
+	 			$('#text').html('Dont be a lazy fuck and open it in your laptop').css('color','white').css('left',0).css('font-size','30px');
+			}
+	</script>
+</body>
+</html>

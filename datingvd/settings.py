@@ -25,7 +25,11 @@ STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'datingvd/static'),
+)
+
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'datingvd/templates'),
 )
 
 # Quick-start development settings - unsuitable for production
@@ -51,6 +55,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'main'
 )
 
 MIDDLEWARE_CLASSES = (

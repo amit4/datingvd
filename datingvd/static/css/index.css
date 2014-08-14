@@ -1,0 +1,30 @@
+@font-face {
+    font-family: kiss;
+    src: url('../font/Kiss Me Quick.ttf');
+}
+
+h1 {
+	color: #ff0;
+	font-size: 30px;
+}
+
+body {
+	background: url('../img/back.png') no-repeat;
+	background-color: #000;
+}
+
+#vd {
+	width: 300px;
+	margin-top: 5%;
+	opacity: 0;
+	box-shadow: 2px 3px 1px 2px #000;
+	border-radius: 30px;
+}
+
+#text {
+	 font-family: kiss;
+	font-size: 150px;
+	position: absolute;
+	margin-top: 20%;
+	left: 30%;
+}
