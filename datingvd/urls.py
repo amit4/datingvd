@@ -11,5 +11,5 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'datingvd.views.index', name='home'),
-    url(r'^main/',include(main.site.urls)),
+    url(r'^main/',include('main.urls')),
 )
