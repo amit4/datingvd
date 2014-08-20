@@ -163,6 +163,7 @@ body {
   -o-animation:balloons 4s ease-in-out infinite;
   animation:balloons 4s ease-in-out infinite;
   transform-origin:bottom center;
+  cursor: pointer;
 }
 
 @-webkit-keyframes balloons {
@@ -225,3 +226,4 @@ body {
 .balloon.right {
 	float: right;
 }
+

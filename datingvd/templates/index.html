@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title> Dating Vidhi Gupta - The Adventure </title>
-	<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/main2.css">
 	<link rel="icon" type="image/jpg" href="static/img/heart_fav.jpg">
 
 </head>
@@ -22,9 +22,9 @@
 		</div>
 		<div id="col2">
 			<div id="slideWrapper">
-				<center> <img id="rainy" src="static/img/vd.jpg"> </center>
-			<!-- 	<img src="static/img/vidhi.jpg">
-				<img src="static/img/vidhi3.jpg"> -->
+				 <img id="rainy" src="static/img/vd.jpg"> 
+				<img src="static/img/vidhi.jpg"> 
+				<img src="static/img/vidhi3.jpg"> 
 			</div>
 			<audio id="audio_track" loop>
 				  	<source src="static/audio/lavien.mp3" type="audio/mpeg">
@@ -48,6 +48,8 @@
 	<script src="static/js/jquery.slides.min.js"></script>
 	<script src="/static/js/rainyday.min.js"></script>
 	<script>
+
+	$(window).bind("load", function() {
 		$(document).ready( function(){
 		        $.fn.snow({ minSize: 5, maxSize: 50, newOn: 300, flakeColor: '#F6FBC4' });
 		});
@@ -66,46 +68,71 @@
   //           }
 
 		//slider
-		 // $(function(){
-		 //      $("#slideWrapper").slidesjs({
-		 //      	play: {
-			//       active: false,
-			//         // [boolean] Generate the play and stop buttons.
-			//         // You cannot use your own buttons. Sorry.
-			//       effect: "fade",
-			//         // [string] Can be either "slide" or "fade".
-			//       interval: 5000,
-			//         // [number] Time spent on each slide in milliseconds.
-			//       auto: true,
-			//         // [boolean] Start playing the slideshow on load.
-			//       swap: false,
-			//         // [boolean] show/hide stop and play buttons
-			//       pauseOnHover: false,
-			//         // [boolean] pause a playing slideshow on hover
-			//       restartDelay: 2500
-			//         // [number] restart delay on inactive slideshow
-			//     }, 
-			//     effect: {
-			//       slide: {
-			//         // Slide effect settings.
-			//         speed: 200
-			//           // [number] Speed in milliseconds of the slide animation.
-			//       },
-			//       fade: {
-			//         speed: 1000,
-			//           // [number] Speed in milliseconds of the fade animation.
-			//         crossfade: true
-			//           // [boolean] Cross-fade the transition.
-			//       }
-			//     }
-		 //      });
-   //  	});
-		 // setTimeout(function(){
-		 // 	$('#slideWrapper').css('height','517px');
-		 // 	$('.slidesjs-container').css('height','517px');
-		 // 	$('#slideWrapper img').css('width','300px').css('height', '517px').css('margin-left','130px');
-		 // 	$('#slideWrapper a').css('display','none');
-		 // }, 100);
+		 $(function(){
+		      $("#slideWrapper").slidesjs({
+		      	play: {
+			      active: false,
+			        // [boolean] Generate the play and stop buttons.
+			        // You cannot use your own buttons. Sorry.
+			      effect: "fade",
+			        // [string] Can be either "slide" or "fade".
+			      interval: 5000,
+			        // [number] Time spent on each slide in milliseconds.
+			      auto: true,
+			        // [boolean] Start playing the slideshow on load.
+			      swap: false,
+			        // [boolean] show/hide stop and play buttons
+			      pauseOnHover: false,
+			        // [boolean] pause a playing slideshow on hover
+			      restartDelay: 2500
+			        // [number] restart delay on inactive slideshow
+			    }, 
+			    effect: {
+			      slide: {
+			        // Slide effect settings.
+			        speed: 200
+			          // [number] Speed in milliseconds of the slide animation.
+			      },
+			      fade: {
+			        speed: 1000,
+			          // [number] Speed in milliseconds of the fade animation.
+			        crossfade: true
+			          // [boolean] Cross-fade the transition.
+			      }
+			    }
+		      });
+    	});
+		 setTimeout(function(){
+		 	$('#slideWrapper').css('height','517px');
+		 	$('.slidesjs-container').css('height','517px');
+		 	$('#slideWrapper img').css('width','300px').css('height', '517px').css('margin-left','130px');
+		 	$('#slideWrapper a').css('display','none');
+		 }, 100);
+
+		// mouse hover action
+		$( ".balloon" )
+		  .mouseenter(function() {
+		    $(this).animate({
+			    'opacity': 0.8,
+			  }, 500);
+		})
+		  .mouseleave(function() {
+		    $(this).animate({
+			    'opacity': 0.5,
+			  }, 500);
+  		});
+
+		$( ".menuText" )
+		  .mouseenter(function() {
+		    $(this).next().next().animate({
+			    'opacity': 0.8,
+			  }, 500);
+		  })
+		  .mouseleave(function() {
+		     $(this).next().next().animate({
+			    'opacity': 0.5,
+			 }, 500);
+  		});
 
 
 		// Loading audio track
@@ -113,6 +140,9 @@
 			  myAud.autoplay=true;
 			  myAud.load();
 
+  
+	});
+		
 	</script>
 </body>
 </html>
