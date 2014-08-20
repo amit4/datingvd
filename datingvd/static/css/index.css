@@ -15,8 +15,6 @@ html {
 }
 
 body {
-	left: 0;
-	top: 0;
 	background-color: #000;
 	background: url('../img/back.png') no-repeat;
 	overflow: hidden;
