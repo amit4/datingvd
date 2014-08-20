@@ -8,17 +8,37 @@ h1 {
 	font-size: 30px;
 }
 
-body {
-	background: url('../img/back.png') no-repeat;
-	background-color: #000;
+html {
+	margin: 0;
+	left: 0;
+	top: 0;
 }
 
-#vd {
+body {
+	left: 0;
+	top: 0;
+	background-color: #000;
+	background: url('../img/back.png') no-repeat;
+	overflow: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#background {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+#slideWrapper img {
 	width: 300px;
 	margin-top: 5%;
-	opacity: 0;
+	opacity: 0.6;
 	box-shadow: 2px 3px 1px 2px #000;
 	border-radius: 30px;
+	margin-left: auto;
+	margin-right:auto; 
 }
 
 #text {
@@ -27,4 +47,184 @@ body {
 	position: absolute;
 	margin-top: 20%;
 	left: 30%;
+}
+
+#mainWrapper {
+	margin: 0 auto;
+	display: block;
+	width: 940px;
+	margin-top: 50px;
+}
+
+#col1,#col3{
+	width: 188px;
+	float:left;
+}
+
+#col2 {
+	width:564px;
+	float:left;
+}
+#slideWrapper {
+	width: 564px;
+	display: block;
+}
+
+.optionBalloon {
+	width: 188px;
+	display: block;
+	position: relative;
+	height: 265px;
+	float: left;
+}
+
+.menuText {
+	font-family: kiss;
+	position: absolute;
+	left: 57px;
+	top: 105px;
+	font-size: 60px;
+	-webkit-animation:balloons 4s ease-in-out infinite;
+	-moz-animation:balloons 4s ease-in-out infinite;
+	-ms-animation:balloons 4s ease-in-out infinite;
+	-o-animation:balloons 4s ease-in-out infinite;
+	animation:balloons 4s ease-in-out infinite;
+	transform-origin:bottom center;
+	z-index: 99;
+	opacity: 0.7;
+	color: white;
+	cursor: pointer;
+}
+
+.icon {
+	position: absolute;
+	left: 57px;
+	top: 105px;
+	-webkit-animation:balloons 4s ease-in-out infinite;
+	-moz-animation:balloons 4s ease-in-out infinite;
+	-ms-animation:balloons 4s ease-in-out infinite;
+	-o-animation:balloons 4s ease-in-out infinite;
+	animation:balloons 4s ease-in-out infinite;
+	transform-origin:bottom center;
+}
+
+#icon-newsfeed img, #icon-justvd img , #icon-pictures img, #icon-wall img {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: -38px;
+	left: -19px;
+}
+
+#icon-newsfeed img, #icon-justvd img  {
+	opacity: 0.6;
+}
+
+
+.menuText.one {
+	left: 21px;
+	top: 85px;
+}
+
+.menuText.two {
+	left: 52px;
+	top: 54px;
+	opacity: 1;
+}
+
+.menuText.three {
+	left: 42px;
+	top: 45px;
+	font-size: 52px;
+}
+
+.menuText.three span {
+	font-family: Arial;
+}
+
+.menuText.four {
+	left: 62px;
+	top: 80px;
+	opacity: 1;
+}
+
+.balloon {
+  display:inline-block;
+  margin: 0 auto;
+  width:185px;
+  height:230px;
+  background:hsl(215,50%,65%);
+  border-radius:80%;
+  opacity: 0.5;
+  position:relative;
+  box-shadow:inset -10px -10px 0 rgba(0,0,0,0.07);
+  transition:transform 0.5s ease;
+  z-index:10;
+  -webkit-animation:balloons 4s ease-in-out infinite;
+  -moz-animation:balloons 4s ease-in-out infinite;
+  -ms-animation:balloons 4s ease-in-out infinite;
+  -o-animation:balloons 4s ease-in-out infinite;
+  animation:balloons 4s ease-in-out infinite;
+  transform-origin:bottom center;
+}
+
+@-webkit-keyframes balloons {
+  0%,100%{ transform:translateY(0) rotate(-4deg); }
+  50%{ transform:translateY(-25px) rotate(4deg); }
+}
+
+@-moz-keyframes balloons {
+  0%,100%{ transform:translateY(0) rotate(-4deg); }
+  50%{ transform:translateY(-25px) rotate(4deg); }
+}
+
+@-ms-keyframes balloons {
+  0%,100%{ transform:translateY(0) rotate(-4deg); }
+  50%{ transform:translateY(-25px) rotate(4deg); }
+}
+
+@-o-keyframes balloons {
+  0%,100%{ transform:translateY(0) rotate(-4deg); }
+  50%{ transform:translateY(-25px) rotate(4deg); }
+}
+
+@keyframes balloons {
+  0%,100%{ transform:translateY(0) rotate(-4deg); }
+  50%{ transform:translateY(-25px) rotate(4deg); }
+}
+
+
+.balloon:before {
+  content:"▲";
+  font-size:20px;
+  color:hsl(215,30%,50%);
+  display:block;
+  text-align:center;
+  width:100%;
+  position:absolute;
+  bottom:-12px;
+  z-index:-100;
+}
+
+.balloon:after {
+ display:inline-block; top:153px;
+  position:absolute;
+  width:1px;
+  margin:0 auto;
+  content:"";
+  background:rgba(0,0,0,0.2); 
+}
+
+.balloon.second{ background:hsl(23,55%,57%); animation-duration:3.5s; }
+.balloon.second:before { color:hsl(23,44%,46%); }
+
+.balloon.third{ background:hsl(139,50%,60%); animation-duration:3s; }
+.balloon.third:before { color:hsl(139,30%,50%);  }
+
+.balloon.fourth{ background:hsl(59,50%,58%); animation-duration:4.5s; }
+.balloon.fourth:before { color:hsl(59,30%,52%);  }
+
+
+.balloon.right {
+	float: right;
 }

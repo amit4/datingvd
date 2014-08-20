@@ -9,34 +9,112 @@
 
 </head>
 <body>
-	<div id="img">
-		<center>
-			<span id="text"> Coming Soon... </span>
-			<img id="vd" src="static/img/vd.jpg">
-		</center>
-	<audio id="audio_track">
-  		<source src="static/audio/back.mp3" type="audio/mpeg">
-	</audio> 
+	<div id="mainWrapper">
+		<div id="col1">
+			<div class="optionBalloon">
+				<span class="menuText one">NewsFeed</span>
+				<span id="icon-newsfeed" class="icon"><img src="/static/img/newsfeed.png"></span>
+				<div class="balloon"></div>
+			</div>
+			<div class="optionBalloon">
+				<span class="menuText two">Just VD</span>
+				<span id="icon-justvd" class="icon"><img src="/static/img/justvd.png"></span>
+				<div class="balloon second"> </div>
+			</div>
+		</div>
+		<div id="col2">
+			<div id="slideWrapper">
+				<img id="rainy" src="static/img/vd.jpg">
+				<img src="static/img/vidhi.jpg">
+				<img src="static/img/vidhi3.jpg">
+			</div>
+			<audio id="audio_track" loop>
+				  	<source src="static/audio/lavien.mp3" type="audio/mpeg">
+			</audio> 
+		</div>
+		<div id="col3">
+			<div class="optionBalloon">
+				<span class="menuText three">Les deux d<span>'</span>entre nous</span>
+				<span id="icon-pictures" class="icon"><img src="/static/img/pictures.png"></span>
+				<div class="balloon right third"></div>
+			</div>
+			<div class="optionBalloon">
+				<span class="menuText four">Wall</span>
+				<span id="icon-wall" class="icon"><img src="/static/img/wall.png"></span>
+				<div class="balloon right fourth"></div>
+			</div>
+		</div>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script>
 	<script src="static/js/jquery.snow.min.1.0.js"></script>
+	<script src="static/js/jquery.slides.min.js"></script>
+	<script src="/static/js/rainyday.min.js"></script>
 	<script>
 		$(document).ready( function(){
 		        $.fn.snow({ minSize: 5, maxSize: 50, newOn: 300, flakeColor: '#F6FBC4' });
 		});
 
-		$('#vd').animate( {'opacity':0.5} , 30000 ,function() {
-			$('#text').animate({'opacity':0.5} , 2000);
-		});
+		// function run() {
+  //               var image = document.getElementById('background');
+  //               image.onload = function() {
+  //                   var engine = new RainyDay({
+  //                       image: this
+  //                   });
+  //                   engine.rain([ [1, 2, 8000] ]);
+  //                   engine.rain([ [3, 3, 0.88], [5, 5, 0.9], [6, 2, 1] ], 100);
+  //               };
+  //               image.crossOrigin = 'anonymous';
+  //               image.src = '/static/img/back.png';
+  //           }
 
+		//slider
+		 $(function(){
+		      $("#slideWrapper").slidesjs({
+		      	play: {
+			      active: false,
+			        // [boolean] Generate the play and stop buttons.
+			        // You cannot use your own buttons. Sorry.
+			      effect: "fade",
+			        // [string] Can be either "slide" or "fade".
+			      interval: 5000,
+			        // [number] Time spent on each slide in milliseconds.
+			      auto: true,
+			        // [boolean] Start playing the slideshow on load.
+			      swap: false,
+			        // [boolean] show/hide stop and play buttons
+			      pauseOnHover: false,
+			        // [boolean] pause a playing slideshow on hover
+			      restartDelay: 2500
+			        // [number] restart delay on inactive slideshow
+			    }, 
+			    effect: {
+			      slide: {
+			        // Slide effect settings.
+			        speed: 200
+			          // [number] Speed in milliseconds of the slide animation.
+			      },
+			      fade: {
+			        speed: 1000,
+			          // [number] Speed in milliseconds of the fade animation.
+			        crossfade: true
+			          // [boolean] Cross-fade the transition.
+			      }
+			    }
+		      });
+    	});
+		 setTimeout(function(){
+		 	$('#slideWrapper').css('height','517px');
+		 	$('.slidesjs-container').css('height','517px');
+		 	$('#slideWrapper img').css('width','300px').css('height', '517px').css('margin-left','130px');
+		 	$('#slideWrapper a').css('display','none');
+		 }, 100);
+
+
+		// Loading audio track
 		myAud=document.getElementById("audio_track");
 			  myAud.autoplay=true;
 			  myAud.load();
 
-		if((navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPad/i))) {
-	 			$('body').css('background', '#000').css('overflow','hidden');
-	 			$('#text').html('Dont be a lazy fuck and open it in your laptop').css('color','white').css('left',0).css('font-size','30px');
-			}
 	</script>
 </body>
 </html>
