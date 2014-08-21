@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title> Dating Vidhi Gupta - The Adventure </title>
-	<link rel="stylesheet" type="text/css" href="/static/css/main4.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/main5.css">
 	<link rel="icon" type="image/jpg" href="static/img/heart_fav.jpg">
 	<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -16,7 +16,12 @@
 </head>
 <body>
 	<div class="overlay"></div>
+	<div class="shelf">
+		<div class="closed_scroll"><span>1</span></div>
+		<div class="closed_scroll"><span>2</span></div>
+	</div>
 	<div class="scroll">
+		<span class="close"> <span>x</span> </span>
 		<span>
 		Your friday night won’t be normal,<br>
 		but the attire ain’t formal,<br>
@@ -37,11 +42,49 @@
 
 
 	</div>
+
+	<div class="scroll">
+		<span class="close"> <span>x</span> </span>
+		<span>
+		If saturday is when you plan to catch up on sleep,<br>
+		It is an idea for later to keep,<br>
+		This saturday starts early for you and me,<br>
+		Till early evening we be the busy bee.<br><br>
+
+		Your important business be taken care of first,<br>
+		Worry not child, <br>
+		At no point will you be coerced.<br><br>
+
+		Dress casually because there will be walking,<br>
+		Sun may or may not be heavy,<br>
+		But rest assured, there will be hogging.<br><br>
+
+		We start with the place I caught you admiring once.<br>
+		Monte Cristo is your hint,<br>
+		But you will have to wait till your memory comes.<br><br>
+
+		Next stop is a choice,<br>
+		Mutated parc of Versailles,<br>
+		Or the Dutch’s invention rather poise.<br><br>
+
+		Moving ahead, we travel to a place well known.<br>
+		Honey biscuits and a gingerbread beverage,<br>
+		Is what we desire to own.<br><br>
+
+		Last stop for the day is a concept of Roman origin,<br>
+		Breathing on verso of esnic,<br>
+		wherein, <br>
+		We enter without any aim,<br>
+		And end this two day long game.<br><br>
+		</span>
+
+
+	</div>
 	</div>
 	<div id="mainWrapper">
 		<div id="col1">
 			<div class="optionBalloon">
-				<div class="notification"> 1 </div>
+				<div class="notification"> 2 </div>
 				<span class="menuText one">NewsFeed</span>
 				<span id="icon-newsfeed" class="icon"><img src="/static/img/newsfeed.png"></span>
 				<div class="balloon"></div>
@@ -84,7 +127,7 @@
 	$(window).bind("load", function() {
 
 		$(document).ready( function(){
-		        $.fn.snow({ minSize: 5, maxSize: 50, newOn: 300, flakeColor: '#F6FBC4' });
+		       $.fn.snow({ minSize: 5, maxSize: 50, newOn: 300, flakeColor: '#F6FBC4' });
 		});
 
 		// function run() {
@@ -171,12 +214,29 @@
 
 		 $('.menuText.one').on('click', function(){
 		 	$('.overlay').show();
-		 	$('.scroll').show();
+		 	//$('.scroll').show();
+		 	$('.shelf').show();
 		 });
 
 		 $('.overlay').on('click', function(){
 		 	$('.overlay').hide();
 		 	$('.scroll').hide();
+		 	$('.shelf').hide();
+		 	$('.shelf').css('opacity','0.8');
+		 });
+
+		 // closed scroll click action
+
+		 $('.closed_scroll').on('click',function(){
+			 var scroll_number = $(this).index()
+			 var scroll  = $('.scroll').get(scroll_number);
+			 $(scroll).show();
+			 $('.shelf').css('opacity','0.3');
+		});
+
+		 $('.close').on('click',function(){
+		 	$('.scroll').hide();
+		 	$('.shelf').css('opacity','0.8');
 		 });
 
 		// Loading audio track

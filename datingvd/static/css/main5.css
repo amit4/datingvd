@@ -178,8 +178,59 @@ body {
 	text-align: center;
 	font-size: 23px;
 	position: relative;
-	left: 50px;
+	left: 0px;
 	top: 115px;
+	overflow-y: auto;
+	height: 400px;
+	display: block;
+}
+
+.scroll .close {	
+	opacity: 0.6;
+	border-radius: 50%;
+	width: 19px;
+	height: 19px;
+	position: absolute;
+	background: white;
+	display: block;
+	text-align: center;
+	top: 105px;
+	left: 437px;
+	z-index: 110;
+	cursor: pointer;
+}
+
+.scroll .close span {
+	top: -5px;
+	left: 0px;
+	font-size: 18px;
+}
+
+.close:hover {
+	opacity: 1;
+}
+
+.closed_scroll {
+	background: url('../img/scroll_closed.png');
+	width: 180px;
+	text-align: center;
+	font-size: 20px;
+	height: 68px;
+	font-family: poem;
+	opacity: 0.8;
+	margin-left: 10px;
+	cursor: pointer;
+	position: relative;
+	float: left;
+}
+
+.closed_scroll:hover{
+	opacity: 1;
+}
+
+.closed_scroll span {
+	top: 24px;
+	position: relative;
 }
 
 .notification {
@@ -281,5 +332,16 @@ body {
 
 .balloon.right {
 	float: right;
+}
+
+.shelf {
+	background: url('../img/shelf.png');
+	width: 575px;
+	height: 92px;
+	position: absolute;
+	display: none;
+	z-index: 104;
+	opacity: 0.8;
+	left: 28%;
 }
 
