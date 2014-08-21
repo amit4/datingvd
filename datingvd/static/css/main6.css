@@ -22,7 +22,7 @@ html {
 body {
 	background-color: #000;
 	background: url('../img/back.png') no-repeat;
-	overflow: hidden;
+	overflow-y: hidden;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -343,5 +343,12 @@ body {
 	z-index: 104;
 	opacity: 0.8;
 	left: 28%;
+}
+
+
+@media (max-width: 800px) {
+ body {
+ 	overflow: auto;
+ }
 }
 
