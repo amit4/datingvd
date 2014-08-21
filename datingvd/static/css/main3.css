@@ -3,6 +3,11 @@
     src: url('../font/Kiss Me Quick.ttf');
 }
 
+@font-face {
+    font-family: poem;
+    src: url('../font/Garton.ttf');
+}
+
 h1 {
 	color: #ff0;
 	font-size: 30px;
@@ -143,6 +148,57 @@ body {
 	left: 62px;
 	top: 80px;
 	opacity: 1;
+}
+
+.overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 101;
+  display: none;
+  background-color: rgba(0,0,0,0.6); /*dim the background*/
+}
+
+.scroll {
+	position: absolute;
+	background: url('../img/scroll.png') no-repeat; 
+	background-size: cover;
+	width: 512px;
+	height: 520px;
+	font-family: poem;
+	margin: 0 auto;
+	display: none;
+	z-index: 103;
+	left: 35%;
+}
+
+.scroll span {
+	text-align: center;
+	font-size: 23px;
+	position: relative;
+	left: 50px;
+	top: 115px;
+}
+
+.notification {
+	border-radius: 50%;
+	width: 19px;
+	height: 19px;
+	position: absolute;
+	background: red;
+	display: block;
+	text-align: center;
+	top: 36px;
+	right: 60px;
+	z-index: 100;
+	-webkit-animation:balloons 4s ease-in-out infinite;
+	-moz-animation:balloons 4s ease-in-out infinite;
+	-ms-animation:balloons 4s ease-in-out infinite;
+	-o-animation:balloons 4s ease-in-out infinite;
+	animation:balloons 4s ease-in-out infinite;
+	transform-origin:bottom center;
 }
 
 .balloon {
